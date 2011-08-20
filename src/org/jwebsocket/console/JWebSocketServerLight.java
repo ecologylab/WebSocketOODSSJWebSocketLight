@@ -25,19 +25,20 @@ import org.jwebsocket.instance.JWebSocketInstance;
 import org.jwebsocket.server.CustomServer;
 import org.jwebsocket.server.TokenServer;
 
-import ecologylab.standalone.TestServer;
+import ecologylab.oodss.distributed.server.ServerMessages;
+//import ecologylab.standalone.TestServer;
 
 /**
  * @author puran
  * @version $Id: JWebSocketServer.java 443 2010-05-06 12:03:08Z fivefeetfurther $
  *
  */
-public class JWebSocketServer {
+public class JWebSocketServerLight {
 
 	/**
 	 * @param args the command line arguments
 	 */
-	public static void main(String[] args) {
+	public static void startWebsocketServer(ServerMessages server){ //main(String[] args) {
 		// the following 3 lines may not be removed due to GNU LGPL 3.0 license!
 		System.out.println("jWebSocket Ver. " + JWebSocketServerConstants.VERSION_STR + " (" + System.getProperty("sun.arch.data.model") + "bit)");
 		System.out.println(JWebSocketCommonConstants.COPYRIGHT);
@@ -69,9 +70,8 @@ public class JWebSocketServer {
 		}
 		System.out.println("Starting up the OODSS Part...");
 		//myListener... can give it stuff now.. :D
-		
-		myListener.oodssServer = TestServer.getServer();
-		myListener.oodssServer.blah(JWebSocketFactory.getServer("ts0"));
+		myListener.oodssServer = server;//TestServer.getServer();
+		myListener.oodssServer.putServerObject(JWebSocketFactory.getServer("ts0"));
 		
 		
 		//myListener.oodssServer.webSocketServer = JWebSocketFactory.getServer("ts0");

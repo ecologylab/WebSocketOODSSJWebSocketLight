@@ -5,7 +5,6 @@
 	<classpathentry kind="src" path="/jWebSocketServer"/>
 	<classpathentry kind="src" path="/jWebSocketCommon"/>
 	<classpathentry kind="src" path="/jWebSocketServerAPI"/>
-	<classpathentry kind="src" path="/WebSocketOODSS"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ecologylabFundamental"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
