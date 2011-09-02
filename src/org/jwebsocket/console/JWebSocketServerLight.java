@@ -55,7 +55,7 @@ public class JWebSocketServerLight {
 			lTS0.addListener(new JWebSocketTokenListenerSample());
 		}
 		*/
-		MyListener myListener = new MyListener();
+		JWebSocketListenerBridge myListener = new JWebSocketListenerBridge();
         TokenServer lTS0 = (TokenServer) JWebSocketFactory.getServer("ts0");
 		if (lTS0 != null) {
 			lTS0.addListener(myListener);

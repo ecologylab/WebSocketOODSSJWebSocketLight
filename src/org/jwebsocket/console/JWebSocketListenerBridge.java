@@ -52,7 +52,7 @@ if (lTS0 != null) {
  * This shows an example of a simple WebSocket listener
  * @author aschulze
  */
-public class MyListener implements WebSocketServerListener {
+public class JWebSocketListenerBridge implements WebSocketServerListener {
 
 	//put some object that has threaded events here....
 	//private static Logger log = Logging.getLogger(MyListener.class);
