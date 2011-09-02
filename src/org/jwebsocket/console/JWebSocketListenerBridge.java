@@ -70,6 +70,12 @@ public class JWebSocketListenerBridge implements WebSocketServerListener {
 	//	if (log.isDebugEnabled()) {
 	//		log.debug("Client '" + aEvent.getSessionId() + "' connected.");
 		//}
+		//aEvent.getSessionId() .. need to add id's here.
+		if(oodssServer != null)
+		{
+			oodssServer.newClientAdded(aEvent.getSessionId());
+		}
+		
 		System.out.println( "Client '" + aEvent.getSessionId() + "' connected.");
 	}
 
