@@ -28,8 +28,9 @@ import org.jwebsocket.logging.Logging;
 import ecologylab.oodss.distributed.server.ServerMessages;
 import ecologylab.oodss.messages.Ping;
 import ecologylab.oodss.messages.PingRequest;
-import ecologylab.serialization.ElementState.FORMAT;
+import ecologylab.serialization.formatenums.Format;
 import ecologylab.serialization.SIMPLTranslationException;
+import ecologylab.serialization.SimplTypesScope;
 
 
 
@@ -99,7 +100,8 @@ public class JWebSocketListenerBridge implements WebSocketServerListener {
 		
 		ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 		try {
-			p.serialize(outStream, FORMAT.JSON);
+			//p.serialize(outStream, FORMAT.JSON);
+			SimplTypesScope.serialize(p,outStream,Format.JSON);
 		} catch (SIMPLTranslationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
